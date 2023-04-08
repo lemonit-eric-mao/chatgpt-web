@@ -1,0 +1,19 @@
+version: '3.1'
+services:
+  chatgpt-web-server:
+    image: chatgpt-web-server:0.1.0
+    container_name: chatgpt-web-server
+    restart: always
+    ports:
+      - 8080:3000
+    hostname: eric_koa2_server
+
+    volumes:
+      # 容器与宿主机时间同步
+      - /etc/localtime:/etc/localtime
+    environment:
+      DB_HOST: '192.168.2.10'
+      DB_PORT: '3306'
+      DATABASE: 'oidc_auth'
+      DB_USER: 'root'
+      DB_PASSWORD: 'yourpasswd'

@@ -1,0 +1,43 @@
+{
+    "name": "chatgpt-web-server",
+    "version": "0.1.0",
+    "author": {
+        "name": "siyu.mao",
+        "url": "http://www.dev-share.top"
+    },
+    "scripts": {
+        "start": "nodemon --exec babel-node src/app.js",
+        "build": "rimraf dist && cross-env NODE_ENV=production BUILD_OUT_DIR=dist NODE_OPTIONS=--openssl-legacy-provider webpack --config config/webpack.config.prod.js",
+        "dist": "node dist/server.bundle.js"
+    },
+    "dependencies": {
+        "@koa/cors": "^3.1.0",
+        "ejs": "^3.1.6",
+        "koa": "^2.13.4",
+        "koa-bodyparser": "^4.3.0",
+        "koa-compress": "^5.1.0",
+        "koa-html-render": "^1.0.3",
+        "koa-logger": "^3.2.1",
+        "koa-router": "^10.1.1",
+        "koa-static": "^5.0.0",
+        "koa-views": "^7.0.1",
+        "mysql": "^2.18.1",
+        "openai": "^3.2.1"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.16.7",
+        "@babel/node": "^7.16.7",
+        "@babel/plugin-proposal-decorators": "^7.16.7",
+        "@babel/preset-env": "^7.16.7",
+        "babel-loader": "^8.2.3",
+        "clean-webpack-plugin": "^4.0.0",
+        "cross-env": "^7.0.3",
+        "nodemon": "^2.0.15",
+        "rimraf": "^3.0.2",
+        "terser-webpack-plugin": "^4.2.3",
+        "webpack": "^4.46.0",
+        "webpack-cli": "^3.3.12",
+        "webpack-merge": "^5.8.0",
+        "webpack-node-externals": "^3.0.0"
+    }
+}
